@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="WelchallynServiceImplementationService" targetNamespace="http://localhost:8000/wsdl?wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost:8000/wsdl?wsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://localhost:8000/wsdl?wsdl" version="1.0" xmlns:tns="http://localhost:8000/wsdl?wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="customData" type="tns:customData"/>
+
+  <xs:element name="insertPatientVitals" type="tns:insertPatientVitals"/>
+
+  <xs:element name="insertPatientVitalsResponse" type="tns:insertPatientVitalsResponse"/>
+
+  <xs:complexType name="insertPatientVitals">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="insertDateTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="uniquePatientId" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientName" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientLastName" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientSecondLastName" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientRoom" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientBed" type="xs:string"/>
+      <xs:element minOccurs="0" name="deviceLocationID" type="xs:string"/>
+      <xs:element minOccurs="0" name="clinicianID" type="xs:string"/>
+      <xs:element minOccurs="0" name="clinicianID2" type="xs:string"/>
+      <xs:element minOccurs="0" name="clinicianFirstName" type="xs:string"/>
+      <xs:element minOccurs="0" name="clinicianLastName" type="xs:string"/>
+      <xs:element minOccurs="0" name="temperature" type="xs:string"/>
+      <xs:element minOccurs="0" name="temperatureMode" type="xs:string"/>
+      <xs:element minOccurs="0" name="heartRate" type="xs:string"/>
+      <xs:element minOccurs="0" name="so2" type="xs:string"/>
+      <xs:element minOccurs="0" name="diastolic" type="xs:string"/>
+      <xs:element minOccurs="0" name="systolic" type="xs:string"/>
+      <xs:element minOccurs="0" name="respiratoryRate" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientHeight" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientWeight" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientBMI" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientPain" type="xs:string"/>
+      <xs:element minOccurs="0" name="o2FlowRate" type="xs:string"/>
+      <xs:element minOccurs="0" name="o2Concentration" type="xs:string"/>
+      <xs:element minOccurs="0" name="o2Method" type="xs:string"/>
+      <xs:element minOccurs="0" name="o2Location" type="xs:string"/>
+      <xs:element minOccurs="0" name="nibppatientposition" type="xs:string"/>
+      <xs:element minOccurs="0" name="nibpcuffsize" type="xs:string"/>
+      <xs:element minOccurs="0" name="nibpcuffsite" type="xs:string"/>
+      <xs:element minOccurs="0" name="deviceID" type="xs:string"/>
+      <xs:element minOccurs="0" name="deviceModel" type="xs:string"/>
+      <xs:element minOccurs="0" name="customData" type="tns:customData"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="customData">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Parameter" type="tns:Parameter"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Score" type="tns:Score"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Calculation" type="tns:Calculation"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Parameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" type="xs:string"/>
+      <xs:element minOccurs="0" name="Score" type="tns:Score"/>
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string"/>
+    <xs:attribute name="Type" type="xs:string"/>
+    <xs:attribute name="HISId" type="xs:string"/>
+    <xs:attribute name="Unit" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="Score">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string"/>
+    <xs:attribute name="Type" type="xs:string"/>
+    <xs:attribute name="HISId" type="xs:string"/>
+    <xs:attribute name="Unit" type="xs:string"/>
+    <xs:attribute name="ParamName" type="xs:string"/>
+    <xs:attribute name="Formula" type="xs:string"/>
+    <xs:attribute name="UnitHISId" type="xs:string"/>
+    <xs:attribute name="ShowColor" type="xs:string"/>
+    <xs:attribute name="ShowValue" type="xs:string"/>
+    <xs:attribute name="Rank" type="xs:string"/>
+    <xs:attribute name="RankHISId" type="xs:string"/>
+    <xs:attribute name="Color" type="xs:string"/>
+    <xs:attribute name="ColorHISId" type="xs:string"/>
+    <xs:attribute name="CalcName" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="Calculation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string"/>
+    <xs:attribute name="Type" type="xs:string"/>
+    <xs:attribute name="HISId" type="xs:string"/>
+    <xs:attribute name="Unit" type="xs:string"/>
+    <xs:attribute name="Formula" type="xs:string"/>
+    <xs:attribute name="UnitHISId" type="xs:string"/>
+    <xs:attribute name="ShowColor" type="xs:string"/>
+    <xs:attribute name="ShowValue" type="xs:string"/>
+    <xs:attribute name="Rank" type="xs:string"/>
+    <xs:attribute name="RankHISId" type="xs:string"/>
+    <xs:attribute name="Color" type="xs:string"/>
+    <xs:attribute name="ColorHISId" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="insertPatientVitalsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="insertPatientVitals">
+    <wsdl:part name="parameters" element="tns:insertPatientVitals">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertPatientVitalsResponse">
+    <wsdl:part name="parameters" element="tns:insertPatientVitalsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WelchallynServiceImplementation">
+    <wsdl:operation name="insertPatientVitals">
+      <wsdl:input name="insertPatientVitals" message="tns:insertPatientVitals">
+    </wsdl:input>
+      <wsdl:output name="insertPatientVitalsResponse" message="tns:insertPatientVitalsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WelchallynServiceImplementationServiceSoapBinding" type="tns:WelchallynServiceImplementation">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="insertPatientVitals">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insertPatientVitals">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertPatientVitalsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WelchallynServiceImplementationService">
+    <wsdl:port name="WelchallynServiceImplementationPort" binding="tns:WelchallynServiceImplementationServiceSoapBinding">
+      <soap:address location="http://localhost:8000/wsdl?wsdl"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
