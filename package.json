@@ -1,7 +1,7 @@
 {
   "name": "node-soap-example",
   "version": "1.0.0",
-  "description": "A simple SOAP Server and Client using Node.js, express and node-soap (https://github.com/vpulim/node-soap)",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node .",
