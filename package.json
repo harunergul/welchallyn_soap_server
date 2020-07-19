@@ -26,7 +26,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "soap": "^0.30.0"
   }
 }
